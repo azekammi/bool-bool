@@ -1,0 +1,1 @@
+<div>Перейдите по ссылке: {!! route("confirmingAccount")."?confirming_code=".$data["confirmingCode"] !!}</div>

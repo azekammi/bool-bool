@@ -1,0 +1,91 @@
+2018-05-22 19:57:07 pid:1 exception 'Exception' with message 'You can't send(NULL) to client, you need to convert it to a string. ' in W:\domains\socialhub.loc\app\Libraries\Workerman\Protocols\Websocket.php:232
+Stack trace:
+#0 W:\domains\socialhub.loc\app\Libraries\Workerman\Connection\TcpConnection.php(336): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 W:\domains\socialhub.loc\app\Libraries\Server.php(23): Workerman\Connection\TcpConnection->send(NULL)
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), '{"user":"1","da...')
+#3 W:\domains\socialhub.loc\app\Libraries\Workerman\Connection\TcpConnection.php(668): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"user":"1","da...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #30)
+#5 W:\domains\socialhub.loc\app\Libraries\Workerman\Events\Select.php(291): call_user_func_array(Array, Array)
+#6 W:\domains\socialhub.loc\app\Libraries\Workerman\Worker.php(2229): Workerman\Events\Select->loop()
+#7 W:\domains\socialhub.loc\app\Libraries\Workerman\Worker.php(1220): Workerman\Worker->run()
+#8 W:\domains\socialhub.loc\app\Libraries\Workerman\Worker.php(1163): Workerman\Worker::forkWorkersForWindows()
+#9 W:\domains\socialhub.loc\app\Libraries\Workerman\Worker.php(481): Workerman\Worker::forkWorkers()
+#10 W:\domains\socialhub.loc\app\Libraries\Server.php(47): Workerman\Worker::runAll()
+#11 {main}
+2018-05-22 19:57:07 pid:1 Worker process terminated
+2018-05-22 19:58:48 pid:1 exception 'Exception' with message 'You can't send(NULL) to client, you need to convert it to a string. ' in W:\domains\socialhub.loc\app\Libraries\Workerman\Protocols\Websocket.php:232
+Stack trace:
+#0 W:\domains\socialhub.loc\app\Libraries\Workerman\Connection\TcpConnection.php(336): Workerman\Protocols\Websocket::encode(NULL, Object(Workerman\Connection\TcpConnection))
+#1 W:\domains\socialhub.loc\app\Libraries\Server.php(23): Workerman\Connection\TcpConnection->send(NULL)
+#2 [internal function]: {closure}(Object(Workerman\Connection\TcpConnection), '{"user":"1","da...')
+#3 W:\domains\socialhub.loc\app\Libraries\Workerman\Connection\TcpConnection.php(668): call_user_func(Object(Closure), Object(Workerman\Connection\TcpConnection), '{"user":"1","da...')
+#4 [internal function]: Workerman\Connection\TcpConnection->baseRead(Resource id #32)
+#5 W:\domains\socialhub.loc\app\Libraries\Workerman\Events\Select.php(291): call_user_func_array(Array, Array)
+#6 W:\domains\socialhub.loc\app\Libraries\Workerman\Worker.php(2229): Workerman\Events\Select->loop()
+#7 W:\domains\socialhub.loc\app\Libraries\Workerman\Worker.php(1220): Workerman\Worker->run()
+#8 W:\domains\socialhub.loc\app\Libraries\Workerman\Worker.php(1163): Workerman\Worker::forkWorkersForWindows()
+#9 W:\domains\socialhub.loc\app\Libraries\Workerman\Worker.php(481): Workerman\Worker::forkWorkers()
+#10 W:\domains\socialhub.loc\app\Libraries\Server.php(47): Workerman\Worker::runAll()
+#11 {main}
+2018-05-22 19:58:48 pid:1 Worker process terminated
+2018-05-22 20:32:19 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Log' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 36"
+2018-05-22 20:56:50 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 38"
+2018-05-22 20:56:53 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 38"
+2018-05-22 20:58:32 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 39"
+2018-05-22 21:04:32 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:05:35 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:05:38 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:41:18 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:41:33 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:42:52 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:42:55 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:43:28 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:43:49 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:44:09 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:44:13 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:44:32 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:44:35 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:46:25 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:46:27 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:46:36 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:46:38 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:54:44 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:54:48 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 21:54:51 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:06:25 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:08:35 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:09:31 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:09:38 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:09:50 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:09:53 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:11:18 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:11:21 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:11:40 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:11:42 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:11:47 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:11:55 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:11:58 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:12:00 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:11 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:20 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:34 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:39 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:42 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:47 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:49 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:52 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:16:54 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:17:38 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:17:41 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:17:51 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:18:42 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:18:53 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:22:57 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:23:06 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:23:09 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:23:25 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:23:56 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:23:59 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:24:08 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:24:37 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"
+2018-05-22 22:24:46 pid:1 Worker process terminated with ERROR: E_ERROR "Class 'Symfony\Component\HttpFoundation\Session\Session' not found in W:\domains\socialhub.loc\app\Libraries\Server.php on line 42"

@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'ArtfulBeauty';
+    src: url('ArtfulBeauty.eot?#iefix') format('embedded-opentype'),  url('ArtfulBeauty.otf')  format('opentype'),
+    url('ArtfulBeauty.woff') format('woff'), url('ArtfulBeauty.ttf')  format('truetype'), url('ArtfulBeauty.svg#ArtfulBeauty') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
