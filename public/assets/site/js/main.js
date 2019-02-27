@@ -21,15 +21,6 @@ $("#open-menu").on("click", navMenuActive)
 $("#close-menu").on("click", navMenuDisactive)
 $(".menu-elements").on("click", navMenuElements)
 
-$('.grid').masonry({
-    // set itemSelector so .grid-sizer is not used in layout
-    itemSelector: '.grid-item',
-    // use element for option
-    columnWidth: 1,
-    percentPosition: true
-    //gutter: 30
-})
-
 $('#news-events-carousel').owlCarousel({
     loop: true,
     center: false,
@@ -463,4 +454,13 @@ $(document).ready(function () {
     headerBodyElementsView()
     fixedMenu()
     indicatorOfOutline()
+
+    $('.grid').masonry({
+        // set itemSelector so .grid-sizer is not used in layout
+        itemSelector: '.grid-item',
+        // use element for option
+        columnWidth: 1,
+        percentPosition: true
+        //gutter: 30
+    })
 })
