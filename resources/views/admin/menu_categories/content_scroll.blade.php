@@ -59,7 +59,7 @@
                                     </a>
 
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="{{route('adminMenuCategoryEdit', ['id'=>$menuCategory->menu_category_id])}}"><i class="icon-pencil"></i> Редактировать</a></li>
+                                        <li><a href="{{route('adminMenuCategoryEdit', ['id'=>$menuCategory->menu_category_id])}}"><i class="icon-pencil"></i> Сохранить</a></li>
                                         <li><a href="" data-toggle="modal" data-target="#deleteModal" data-href="{{route('adminMenuCategoryDelete', ['id'=>$menuCategory->menu_category_id])}}"><i class="icon-bin"></i> Удалить</a></li>
                                     </ul>
                                 </li>

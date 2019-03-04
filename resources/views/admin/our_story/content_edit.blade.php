@@ -36,7 +36,7 @@
                 </div>
             </div>
             {{csrf_field()}}
-            <button type="submit" class="btn btn-primary">Редактировать <i class="icon-arrow-right14 position-right"></i></button>
+            <button type="submit" class="btn btn-primary">Сохранить <i class="icon-arrow-right14 position-right"></i></button>
         </form>
     </div>
 </div>

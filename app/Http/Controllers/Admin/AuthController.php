@@ -43,7 +43,7 @@ class AuthController extends AdminController {
                                 "username" => $input["username"]
                             ]);
 
-                            return redirect()->route('adminDashboard');
+                            return redirect()->route('adminMetaTagsEdit');
                         }
 
                         return redirect()->route('adminLogin')

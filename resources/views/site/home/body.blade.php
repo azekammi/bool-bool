@@ -10,7 +10,7 @@
             </ul>
         </div>
         <div id="mobile-nav-logo">
-            <img src="/assets/site/images/Vector.png" />
+            <img src="/assets/site/images/Vector.svg" />
         </div>
         <ul id="nav-mobile-menu" class="list-unstyled">
             <li><a href="#section-story" class="menu-elements">{{Lang::get("site.static_menu.about_us")}}</a></li>
@@ -219,7 +219,8 @@
                 </div>
                 <div id="news-events-carousel" class="owl-carousel">
                     @forelse($instagramImages as $key => $instagramImage)
-                        <div class="item" style="background-image: url({{$instagramImage->node->display_url}})">
+                        <div class="item">
+                            <img src="{{$instagramImage->node->display_url}}" />
                             @if($key == count($instagramImages)-1)
                                 <div id="view-instagram">
                                     <a href="{{"https://www.instagram.com/$settings->instagram_page_name/"}}" target="_blank">
@@ -555,7 +556,6 @@
             if(e.item.index === e.item.count - activeCount) $("#menu-next-category-{{$menuCategory->id}}").addClass("menu-button-disabled-next")
             else $("#menu-next-category-{{$menuCategory->id}}").removeClass("menu-button-disabled-next")
 
-            console.log(e.item.index === 0)
             if(e.item.index === 0) $("#menu-prev-category-{{$menuCategory->id}}").addClass("menu-button-disabled-prev")
             else $("#menu-prev-category-{{$menuCategory->id}}").removeClass("menu-button-disabled-prev")
         }

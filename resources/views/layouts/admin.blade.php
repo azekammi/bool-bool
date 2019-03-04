@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="touch-action: unset">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +48,7 @@
 
 </head>
 
-<body>
+<body style="touch-action: unset">
 
 <!-- Main navbar -->
 <div class="navbar navbar-inverse">
@@ -57,14 +57,9 @@
         <ul class="nav navbar-nav navbar-right">
 
             <li class="dropdown dropdown-user">
-                <a class="dropdown-toggle" data-toggle="dropdown">
-                    <span>{{Lang::get('admin.settings')}}</span>
-                    <i class="caret"></i>
+                <a href="{{route('adminLogout')}}">
+                    <span>Logout</span>
                 </a>
-
-                <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="{{route('adminLogout')}}"><i class="icon-switch2"></i> Logout</a></li>
-                </ul>
             </li>
         </ul>
     </div>
