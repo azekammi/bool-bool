@@ -1,14 +1,20 @@
+function touchMoveOff(e){
+    e.preventDefault()
+}
+
 function navMenuActive(){
     window.scrollTo(0, 0);
     var navMobile = document.getElementById("nav-mobile");
     TweenLite.to(navMobile, 0.5, {display: "block", width:"100%", ease:Power2.easeInOut});
     $("html").css("overflow-y", "hidden")
+    window.addEventListener('touchmove', touchMoveOff, { passive: false });
 }
 
 function navMenuDisactive(){
     var navMobile = document.getElementById("nav-mobile");
     TweenLite.to(navMobile, 0.5, {display: "none", width:"0", ease:Power2.easeInOut});
     $("html").css("overflow-y", "auto")
+    window.removeEventListener('touchmove', touchMoveOff, { passive: false });
 }
 
 function navMenuElements(){
@@ -377,8 +383,8 @@ $("#story-next").click(function(){
 //$("#food-tab").tab('show')
 //
 /*
-*
-*
+ *
+ *
  */
 
 $("#menu-block, #pin-block a:first-child, #nav-mobile-menu, #header-contacts, #header-footer, #to-section-map, #contacts-pin").on("click", "a", function (event) {
@@ -388,8 +394,8 @@ $("#menu-block, #pin-block a:first-child, #nav-mobile-menu, #header-contacts, #h
     //забираем идентификатор бока с атрибута href
     var id  = $(this).attr('href'),
 
-    //узнаем высоту от начала страницы до блока на который ссылается якорь
-    top = $(id).offset().top;
+        //узнаем высоту от начала страницы до блока на который ссылается якорь
+        top = $(id).offset().top;
 
     //анимируем переход на расстояние - top за 1500 мс
     $('body,html').animate({scrollTop: top}, 1500);
@@ -412,12 +418,12 @@ function fixedMenu(){
 
     if($(this).scrollTop()>=aTop){
         $('#head').addClass("fixed-head")
-        $("#header-body").css("height", "calc(100vh - 50px)")
+        //$("#header-body").css("height", "calc(100vh - 50px)")
         $("#header-body").css("top", "53px")
     }
     else{
         $('#head').removeClass("fixed-head")
-        $("#header-body").css("height", "calc(100vh - 100px)")
+        //$("#header-body").css("height", "calc(100vh - 100px)")
         $("#header-body").css("top", "0")
     }
 }
@@ -441,6 +447,16 @@ function indicatorOfOutline(){
     })
 }
 
+function instaImagesHeight(){
+
+    var heights = []
+    $("#news-events-carousel .item").each(function(index, item){
+        heights.push($(item).height())
+    })
+
+    $("#news-events-carousel .item").height(Math.min.apply(Math, heights))
+}
+
 $( window ).resize(function(){
     headerBodyElementsView()
 })
@@ -448,12 +464,22 @@ $( window ).resize(function(){
 $(window).scroll(function(){
     fixedMenu()
     indicatorOfOutline()
+    //headerBodyElementsView()
 });
 
-$(document).ready(function () {
+// $(document).ready(function () {
+// })
+
+$(window).on("load", function(){
+
+    var vh = window.innerHeight * 0.01;
+//Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', vh+'px');
+
     headerBodyElementsView()
     fixedMenu()
     indicatorOfOutline()
+    instaImagesHeight()
 
     $('.grid').masonry({
         // set itemSelector so .grid-sizer is not used in layout
@@ -463,4 +489,5 @@ $(document).ready(function () {
         percentPosition: true
         //gutter: 30
     })
+
 })
