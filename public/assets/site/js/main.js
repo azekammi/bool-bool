@@ -7,6 +7,7 @@ function navMenuActive(){
     var navMobile = document.getElementById("nav-mobile");
     TweenLite.to(navMobile, 0.5, {display: "block", width:"100%", ease:Power2.easeInOut});
     $("html").css("overflow-y", "hidden")
+    $("html").css("position", "fixed")
     // window.addEventListener('touchmove', touchMoveOff, { passive: false });
 }
 
@@ -14,6 +15,7 @@ function navMenuDisactive(){
     var navMobile = document.getElementById("nav-mobile");
     TweenLite.to(navMobile, 0.5, {display: "none", width:"0", ease:Power2.easeInOut});
     $("html").css("overflow-y", "auto")
+    $("html").css("position", "unset")
     // window.removeEventListener('touchmove', touchMoveOff, { passive: false });
 }
 
