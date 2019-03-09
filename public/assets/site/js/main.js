@@ -7,14 +7,14 @@ function navMenuActive(){
     var navMobile = document.getElementById("nav-mobile");
     TweenLite.to(navMobile, 0.5, {display: "block", width:"100%", ease:Power2.easeInOut});
     $("html").css("overflow-y", "hidden")
-    window.addEventListener('touchmove', touchMoveOff, { passive: false });
+    // window.addEventListener('touchmove', touchMoveOff, { passive: false });
 }
 
 function navMenuDisactive(){
     var navMobile = document.getElementById("nav-mobile");
     TweenLite.to(navMobile, 0.5, {display: "none", width:"0", ease:Power2.easeInOut});
     $("html").css("overflow-y", "auto")
-    window.removeEventListener('touchmove', touchMoveOff, { passive: false });
+    // window.removeEventListener('touchmove', touchMoveOff, { passive: false });
 }
 
 function navMenuElements(){
@@ -27,7 +27,31 @@ $("#open-menu").on("click", navMenuActive)
 $("#close-menu").on("click", navMenuDisactive)
 $(".menu-elements").on("click", navMenuElements)
 
-$('#news-events-carousel').owlCarousel({
+var newsEventsCarousel = $('#news-events-carousel')
+
+$("#news-events-carousel-block .menu-prev-block").click(function(){
+    newsEventsCarousel.trigger('prev.owl.carousel');
+})
+
+$("#news-events-carousel-block .menu-next-block").click(function(){
+    newsEventsCarousel.trigger('next.owl.carousel');
+})
+
+function changeNewsEvents(e) {
+    var activeCount = $(this).find(".active").length
+
+    if(e.item.index === e.item.count - activeCount) $("#news-events-carousel-block .menu-next-block").addClass("menu-button-disabled-next")
+    else $("#news-events-carousel-block .menu-next-block").removeClass("menu-button-disabled-next")
+
+    if(e.item.index === 0) $("#news-events-carousel-block .menu-prev-block").addClass("menu-button-disabled-prev")
+    else $("#news-events-carousel-block .menu-prev-block").removeClass("menu-button-disabled-prev")
+}
+
+newsEventsCarousel.on('translated.owl.carousel', changeNewsEvents)
+
+newsEventsCarousel.on('initialized.owl.carousel', changeNewsEvents);
+
+newsEventsCarousel.owlCarousel({
     loop: true,
     center: false,
     responsiveClass:true,
@@ -57,6 +81,7 @@ $('#news-events-carousel').owlCarousel({
         }
     }
 })
+
 
 //story
 var storyCarousel = $('#story-events-carousel')
@@ -434,11 +459,11 @@ function indicatorOfOutline(){
 
     var id = "";
 
-    if($(this).scrollTop() >= $("#section-story").offset().top) id = "#section-story"
-    if($(this).scrollTop() >= $("#section-menu").offset().top) id = "#section-menu"
-    if($(this).scrollTop() >= $("#section-news-events").offset().top) id = "#section-news-events"
-    if($(this).scrollTop() >= $("#section-moments").offset().top) id = "#section-moments"
-    if($(this).scrollTop() >= $("#section-contacts").offset().top) id = "#section-contacts"
+    if($("#section-story").length && $(this).scrollTop() >= $("#section-story").offset().top) id = "#section-story"
+    if($("#section-menu").length && $(this).scrollTop() >= $("#section-menu").offset().top) id = "#section-menu"
+    if($("#section-news-events").length && $(this).scrollTop() >= $("#section-news-events").offset().top) id = "#section-news-events"
+    if($("#section-moments").length && $(this).scrollTop() >= $("#section-moments").offset().top) id = "#section-moments"
+    if($("#section-contacts").length && $(this).scrollTop() >= $("#section-contacts").offset().top) id = "#section-contacts"
 
     $('#menu-block .menu a').each(function(index, element) {
         if($(element).attr("href") == id){
@@ -457,8 +482,20 @@ function instaImagesHeight(){
     $("#news-events-carousel .item").height(Math.min.apply(Math, heights))
 }
 
+function foodMenuHeight(){
+    var heights = []
+    $("#block-menu-body-body .tab-content").find(".tab-pane").each(function(index, item){
+        heights.push($(item).height())
+    })
+
+    $("#block-menu-body-body .tab-content").find(".tab-pane").height(Math.max.apply(Math, heights))
+    $("#block-menu-body-body .tab-content").find(".tab-pane .owl-carousel").height(Math.max.apply(Math, heights) - 120)
+    $("#block-menu-body-body .tab-content").find(".tab-pane .menu-nav-button-block").height(Math.max.apply(Math, heights))
+}
+
 $( window ).resize(function(){
     headerBodyElementsView()
+    instaImagesHeight()
 })
 
 $(window).scroll(function(){
@@ -472,14 +509,15 @@ $(window).scroll(function(){
 
 $(window).on("load", function(){
 
-    var vh = window.innerHeight * 0.01;
+    // var vh = window.innerHeight * 0.01;
 //Then we set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty('--vh', vh+'px');
+//     document.documentElement.style.setProperty('--vh', vh+'px');
 
     headerBodyElementsView()
     fixedMenu()
     indicatorOfOutline()
     instaImagesHeight()
+    foodMenuHeight()
 
     $('.grid').masonry({
         // set itemSelector so .grid-sizer is not used in layout

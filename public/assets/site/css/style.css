@@ -9,7 +9,6 @@ body {
 #main #header {
   width: 100%;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
   color: white;
   position: relative;
   background-image: url("../images/head-image.png");
@@ -454,11 +453,13 @@ body {
   margin-bottom: 25px;
 }
 #main #section-menu #block-menu-body #block-menu-body-body .menu-carousel-block .menu-carousel .item li .food-name-price-block .food-name {
+  width: 56%;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1px;
 }
 #main #section-menu #block-menu-body #block-menu-body-body .menu-carousel-block .menu-carousel .item li .food-name-price-block .food-price {
+  width: 44%;
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1px;
@@ -559,6 +560,9 @@ body {
   width: 1145px;
   margin: 0 auto;
 }
+#main #section-news-events #block-new-events #news-events-carousel-block {
+  position: relative;
+}
 #main #section-news-events #block-new-events .francisco-beauty {
   margin-bottom: 30px;
 }
@@ -572,6 +576,58 @@ body {
 }
 #main #section-news-events #block-new-events .owl-stage {
   margin: 0 auto;
+}
+#main #section-news-events #block-new-events .menu-nav-button-block {
+  width: 100px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+#main #section-news-events #block-new-events .menu-nav-button-block a {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  top: calc(50% - 20px);
+}
+#main #section-news-events #block-new-events .menu-nav-button-block a img:first-child {
+  display: block;
+}
+#main #section-news-events #block-new-events .menu-nav-button-block a img:last-child {
+  display: none;
+}
+#main #section-news-events #block-new-events .menu-button-disabled-prev {
+  background-image: none !important;
+}
+#main #section-news-events #block-new-events .menu-button-disabled-prev a img:first-child {
+  display: none !important;
+}
+#main #section-news-events #block-new-events .menu-button-disabled-prev a img:last-child {
+  display: block !important;
+}
+#main #section-news-events #block-new-events .menu-button-disabled-next {
+  background-image: none !important;
+}
+#main #section-news-events #block-new-events .menu-button-disabled-next a img:first-child {
+  display: none !important;
+}
+#main #section-news-events #block-new-events .menu-button-disabled-next a img:last-child {
+  display: block !important;
+}
+#main #section-news-events #block-new-events .menu-prev-block {
+  left: 0;
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75));
+}
+#main #section-news-events #block-new-events .menu-prev-block a {
+  left: calc(50% - 10px);
+}
+#main #section-news-events #block-new-events .menu-next-block {
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75));
+}
+#main #section-news-events #block-new-events .menu-next-block a {
+  left: calc(50% - 10px);
 }
 #main #section-moments {
   width: 100%;
@@ -818,6 +874,7 @@ body {
 
 #nav-mobile {
   width: 0;
+  height: 100vh;
   display: none;
   overflow: scroll;
   position: absolute;
@@ -913,6 +970,10 @@ body {
   background-size: cover;
   background-clip: content-box;
   background-position: center;
+  overflow: hidden;
+}
+#news-events-carousel .item img {
+  border-radius: 10px;
 }
 #news-events-carousel #view-instagram {
   position: absolute;
@@ -929,6 +990,7 @@ body {
   height: 100%;
   background: #000;
   opacity: 0.7;
+  border-radius: 10px;
 }
 #news-events-carousel #view-instagram #view-instagram-block {
   width: 75%;
@@ -938,6 +1000,7 @@ body {
   top: 50%;
   transform: translate(-50%, -50%);
   letter-spacing: 2px;
+  border-radius: 10px;
 }
 #news-events-carousel #view-instagram #view-instagram-block h4 {
   margin: 0;
@@ -993,6 +1056,10 @@ body {
   }
   #block-contacts-body #contacts-bottom-data-phone {
     line-height: 20px !important;
+  }
+
+  #news-events-carousel-block .menu-nav-button-block {
+    display: none;
   }
 }
 @media screen and (min-width: 400px) and (max-width: 500px) {

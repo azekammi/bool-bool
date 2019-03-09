@@ -15,7 +15,7 @@ body
   #header
     width: 100%
     height: 100vh
-    height: calc(var(--vh, 1vh) * 100)
+    //height: calc(var(--vh, 1vh) * 100)
     color: white
     position: relative
     background-image: url("../images/head-image.png")
@@ -417,10 +417,12 @@ body
                   height: 1px
                   margin-bottom: 25px
                   .food-name
+                    width: 56%
                     text-transform: uppercase
                     font-weight: 800
                     letter-spacing: 1px
                   .food-price
+                    width: 44%
                     text-transform: uppercase
                     font-weight: 800
                     letter-spacing: 1px
@@ -448,7 +450,6 @@ body
                   display: block
                 &:last-child
                   display: none
-              //transform: rotate(45deg)
           .menu-button-disabled-prev
             background-image: none !important
             a
@@ -457,8 +458,6 @@ body
                   display: none !important
                 &:last-child
                   display: block !important
-              //border-left: 1px solid #ECECEC !important
-              //border-bottom: 1px solid #ECECEC !important
           .menu-button-disabled-next
             background-image: none !important
             a
@@ -467,23 +466,16 @@ body
                   display: none !important
                 &:last-child
                   display: block !important
-              //border-top: 1px solid #ECECEC !important
-              //border-right: 1px solid #ECECEC !important
           .menu-prev-block
             left: 0
             background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75))
             a
               left: calc(50% - 10px)
-              //border-image: linear-gradient(to right, #FD5D59 , #D70D9E)
-              //border-left: 1px solid #D70D9E
-              //border-bottom: 1px solid #D70D9E
           .menu-next-block
             right: 0
             background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75))
             a
               left: calc(50% - 10px)
-              //border-top: 1px solid #D70D9E
-              //border-right: 1px solid #D70D9E
           .menu-pagination
             line-height: 20px
             margin-left: 150px
@@ -513,6 +505,8 @@ body
     #block-new-events
       width: 1145px
       margin: 0 auto
+      #news-events-carousel-block
+        position: relative
       .francisco-beauty
         margin-bottom: 30px
         &>*
@@ -528,6 +522,49 @@ body
       .owl-stage
         //width: 100% !important
         margin: 0 auto
+      .menu-nav-button-block
+        width: 100px
+        height: 100%
+        position: absolute
+        top: 0
+        z-index: 2
+        a
+          width: 20px
+          height: 20px
+          display: block
+          position: absolute
+          top: calc(50% - 20px)
+          img
+            &:first-child
+              display: block
+            &:last-child
+              display: none
+      .menu-button-disabled-prev
+        background-image: none !important
+        a
+          img
+            &:first-child
+              display: none !important
+            &:last-child
+              display: block !important
+      .menu-button-disabled-next
+        background-image: none !important
+        a
+          img
+            &:first-child
+              display: none !important
+            &:last-child
+              display: block !important
+      .menu-prev-block
+        left: 0
+        background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75))
+        a
+          left: calc(50% - 10px)
+      .menu-next-block
+        right: 0
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75))
+        a
+          left: calc(50% - 10px)
 
   #section-moments
     width: 100%
@@ -746,6 +783,7 @@ body
 
 #nav-mobile
   width: 0
+  height: 100vh
   display: none
   overflow: scroll
   position: absolute
@@ -833,6 +871,9 @@ body
     background-size: cover
     background-clip: content-box
     background-position: center
+    overflow: hidden
+    img
+      border-radius: 10px
   #view-instagram
     position: absolute
     color: #FFF
@@ -847,6 +888,7 @@ body
       height: 100%
       background: #000
       opacity: 0.7
+      border-radius: 10px
     #view-instagram-block
       width: 75%
       position: absolute
@@ -855,6 +897,7 @@ body
       top: 50%
       transform: translate(-50%, -50%)
       letter-spacing: 2px
+      border-radius: 10px
       h4
         margin: 0
         line-height: 28px
@@ -907,6 +950,9 @@ body
       padding-top: 30px !important
     #contacts-bottom-data-phone
       line-height: 20px !important
+  #news-events-carousel-block
+    .menu-nav-button-block
+      display: none
 
 @media screen and (min-width: 400px) and (max-width: 500px)
   #block-contacts-body

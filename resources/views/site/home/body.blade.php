@@ -217,26 +217,39 @@
                     <span>{{$instagramFeed->heading}}</span>
                     <h2>{{$instagramFeed->heading}}</h2>
                 </div>
-                <div id="news-events-carousel" class="owl-carousel">
-                    @forelse($instagramImages as $key => $instagramImage)
-                        <div class="item">
-                            <img src="{{$instagramImage->node->display_url}}" />
-                            @if($key == count($instagramImages)-1)
-                                <div id="view-instagram">
-                                    <a href="{{"https://www.instagram.com/$settings->instagram_page_name/"}}" target="_blank">
-                                        <div id="view-instagram-back"></div>
-                                        <div id="view-instagram-block">
-                                            <div><img src="/assets/site/images/instagram_feed.png" /></div>
-                                            <div><h4>{{Lang::get("site.more_instagram")}}</h4></div>
-                                            <div>{{Lang::get("site.view")}}</div>
-                                        </div>
-                                    </a>
-                                </div>
-                            @endif
-                            {{--                        <img src="{{$instagramImage->node->display_url}}" style="" />--}}
-                        </div>
-                    @empty
-                    @endforelse
+                <div id="news-events-carousel-block">
+                    <div id="news-events-carousel" class="owl-carousel">
+                        @forelse($instagramImages as $key => $instagramImage)
+                            <div class="item">
+                                <img src="{{$instagramImage->node->display_url}}" />
+                                @if($key == count($instagramImages)-1)
+                                    <div id="view-instagram">
+                                        <a href="{{"https://www.instagram.com/$settings->instagram_page_name/"}}" target="_blank">
+                                            <div id="view-instagram-back"></div>
+                                            <div id="view-instagram-block">
+                                                <div><img src="/assets/site/images/instagram_feed.png" /></div>
+                                                <div><h4>{{Lang::get("site.more_instagram")}}</h4></div>
+                                                <div>{{Lang::get("site.view")}}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                @endif
+                            </div>
+                        @empty
+                        @endforelse
+                    </div>
+                    <div class="menu-prev-block menu-nav-button-block">
+                        <a href="javascript:void(0)" class="menu-prev">
+                            <img src="/assets/site/images/arrow_left.png">
+                            <img src="/assets/site/images/arrow_left_disabled.png">
+                        </a>
+                    </div>
+                    <div class="menu-next-block menu-nav-button-block">
+                        <a href="javascript:void(0)" class="menu-next">
+                            <img src="/assets/site/images/arrow_right.png">
+                            <img src="/assets/site/images/arrow_right_disabled.png">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
