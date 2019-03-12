@@ -542,7 +542,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenLite.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6gnyokeyiWFW_sgpLl0M9ijf0ToQ-Dn0&callback=initMap"></script>
-<script src="{{asset('assets/site/js/main.js')}}"></script>
+<script src="{{asset('assets/site/js/main.js?v=1.7')}}"></script>
 
 <script>
     @forelse($menuCategories as $key => $menuCategory)

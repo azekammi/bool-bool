@@ -4,22 +4,22 @@
 
      "static_menu" => [
          "about_us" => "О нас",
-         "menu" => "Menu",
+         "menu" => "Меню",
          "instagram_feed" => "Instagram",
-         "photos" => "Fotolar",
-         "contacts" => "Əlaqə"
+         "photos" => "Фото",
+         "contacts" => "Контакты"
      ],
 
-     "swipe_down" => "Aşağı sürüşdürün",
-     "scroll" => "Aşağı",
-     "down" => "endirin",
+     "swipe_down" => "Спуститесь вниз",
+     "scroll" => "Спуститесь",
+     "down" => "вниз",
 
-     "more_instagram" => "More photos on our instagram page",
-     "view" => "View",
+     "more_instagram" => "Больше фото на нашей instagram странице",
+     "view" => "Просмотр",
 
      "footer" => [
          "copyright" => "Copyright © 2019 BOOL BOOL DOG",
-         "made_by" => "Made by de-co"
+         "made_by" => "Made with love"
      ]
 
  ];
