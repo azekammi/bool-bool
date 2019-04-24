@@ -762,6 +762,8 @@ body
   &:last-child
     margin-right: 0
   .grid-item-element
+    border-radius: 20px
+    overflow: hidden
     img
       &:first-child
         position: absolute
@@ -1020,6 +1022,12 @@ body
 //        width: 42.5% !important
 //        padding-top: calc(42.5% - 4px) !important
 //        transform: translate(-50.0%, -45.5%) !important
+
+@media screen and (min-width: 768px)
+  .grid
+    .grid-item
+      img
+        max-width: 400px
 
 @media screen and (max-width: 768px)
   .grid

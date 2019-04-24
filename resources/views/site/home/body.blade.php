@@ -220,7 +220,7 @@
                 <div id="news-events-carousel-block">
                     <div id="news-events-carousel" class="owl-carousel">
                         @forelse($instagramImages as $key => $instagramImage)
-                            <div class="item">
+                            <div class="item" style="background-image: url({{$instagramImage->node->display_url}})">
                                 <img src="{{$instagramImage->node->display_url}}" />
                                 @if($key == count($instagramImages)-1)
                                     <div id="view-instagram">

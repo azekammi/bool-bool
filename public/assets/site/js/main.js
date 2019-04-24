@@ -486,12 +486,17 @@ function indicatorOfOutline(){
 
 function instaImagesHeight(){
 
+    var width = $("#news-events-carousel .owl-item").width()
     var heights = []
     $("#news-events-carousel .item").each(function(index, item){
         heights.push($(item).height())
     })
+    var minHeight = Math.min.apply(Math, heights)
 
-    $("#news-events-carousel .item").height(Math.min.apply(Math, heights))
+    if(width > minHeight) $("#news-events-carousel .item").height(width)
+    else $("#news-events-carousel .item").width(minHeight)
+
+    $("#news-events-carousel .item img").hide()
 }
 
 function foodMenuHeight(){

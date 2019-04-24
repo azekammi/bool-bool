@@ -162,7 +162,7 @@ class MenuController extends AdminController{
             $input = Request::except('_token');
             if(isset($input)) {
 
-                $rules['name.*'] = "required|max:20";
+                $rules['name.*'] = "required|max:200";
                 $rules['description.*'] = "required|max:200";
                 $rules['price'] = "required|numeric";
 
@@ -229,7 +229,7 @@ class MenuController extends AdminController{
                 $input = Request::except('_token');
                 if (isset($input)) {
 
-                    $rules['name.*'] = "required|max:20";
+                    $rules['name.*'] = "required|max:200";
                     $rules['description.*'] = "required|max:200";
                     $rules['price'] = "required|numeric";
 

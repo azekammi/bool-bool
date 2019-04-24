@@ -852,6 +852,10 @@ body {
 .grid-item:last-child {
   margin-right: 0;
 }
+.grid-item .grid-item-element {
+  border-radius: 20px;
+  overflow: hidden;
+}
 .grid-item .grid-item-element img:first-child {
   position: absolute;
   left: 50%;
@@ -1120,6 +1124,11 @@ body {
   }
   #block-story #story-next img {
     left: 81% !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .grid .grid-item img {
+    max-width: 400px;
   }
 }
 @media screen and (max-width: 768px) {
