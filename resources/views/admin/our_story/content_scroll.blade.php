@@ -29,7 +29,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="{{route('adminOurStoryImageEdit', ['id'=>$ourStoryImage->id])}}"><i class="icon-pencil"></i> Сохранить</a></li>
+                                    <li><a href="{{route('adminOurStoryImageEdit', ['id'=>$ourStoryImage->id])}}"><i class="icon-pencil"></i> Редактировать</a></li>
                                     <li><a href="" data-toggle="modal" data-target="#deleteModal" data-href="{{route('adminOurStoryImageDelete', ['id'=>$ourStoryImage->id])}}"><i class="icon-bin"></i> Удалить</a></li>
                                 </ul>
                             </li>

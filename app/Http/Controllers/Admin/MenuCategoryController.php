@@ -6,6 +6,7 @@ use Request;
 use Validator;
 use DB;
 use Session;
+use Lang;
 
 class MenuCategoryController extends AdminController{
 
@@ -13,93 +14,12 @@ class MenuCategoryController extends AdminController{
 
         $menuCategories = DB::table("menu_categories")
             ->join("menu_category_translations", "menu_category_translations.menu_category_id", "=", "menu_categories.id")
-            ->groupBy("menu_category_id")
-        ->select("menu_category_id", DB::raw('group_concat(name) as names'), DB::raw('group_concat(locale) as locales'));
-
-        //ORDER START
-        $allowedOrderBy =           ["id", "name", "locale"];
-        $allowedOriginalOrderBy =   ["menu_category_id", "name", "locale"];
-
-        $allowedOrderType = ["asc", "desc"];
-
-        $originalOrderByIndex = array_search(Request::input("order_by"), $allowedOrderBy);
-        if($originalOrderByIndex !== false){
-
-            $orderBy = $allowedOrderBy[$originalOrderByIndex];
-            $orderType = $allowedOrderType[array_search(Request::input("order_type"), $allowedOrderType)];
-
-            $menuCategories = $menuCategories->orderBy($allowedOriginalOrderBy[$originalOrderByIndex], $allowedOrderType[array_search(Request::input("order_type"), $allowedOrderType)]);
-        }
-        else{
-            $orderBy = null;
-            $orderType = null;
-        }
-        //ORDER END
-
-        //WHERE START
-        $input = Request::all();
-
-        $rules['name'] = "max:100";
-
-        $validator = Validator::make($input, $rules);
-
-        if (!$validator->fails()) {
-
-            $rules['name'] = "required";
-
-            $isSetAnyVarValidator = Validator::make($input, $rules);
-
-            if(!$isSetAnyVarValidator->fails()){
-
-                $menuCategoriesFiltered = (clone $menuCategories);
-
-                if(!empty($input['name'])) {
-                    $menuCategories = $menuCategories->where("name", "LIKE", "%".$input['name']."%");
-                    $menuCategoriesFiltered = $menuCategoriesFiltered->having("names", "LIKE", "%".$input['name']."%");
-                }
-
-                $menuCategories = $menuCategories->paginate(10, ['*'], null, $page);
-                $menuCategoriesFiltered = $menuCategoriesFiltered->get();
-
-                for($i=0; $i<$menuCategories->count();$i++)
-                    $menuCategories[$i] = $menuCategoriesFiltered[$i];
-            }
-            else{
-                $menuCategories = $menuCategories->paginate(10, ['*'], null, $page);
-            }
-        }
-        else{
-            $menuCategories = $menuCategories->paginate(10, ['*'], null, $page);
-        }
-        //WHERE END
-
-        $filterQuery = [];
-        foreach ($input as $key=>$value){
-            if(!in_array($key, ["order_by", "order_type"])) {
-                $filterQuery[] = $key . "=" . $value;
-            }
-        }
-        $filterQuery = implode("&", $filterQuery);
-
-        $languagesCount = DB::table("languages")->count();
-        $languages = DB::table("languages")->get();
-
-        foreach ($menuCategories as $key=>$menuCategory){
-            $menuCategories[$key]->names = explode(",", $menuCategories[$key]->names);
-            $menuCategories[$key]->locales = explode(",", $menuCategories[$key]->locales);
-
-            for($i=0; $i<=count($languagesCount)+1; $i++) {
-                $localeIndex = array_search($languages[$i]->locale, $menuCategories[$key]->locales);
-                $menuCategories[$key]->namesWithLangs[$languages[$i]->locale] = $menuCategories[$key]->names[$localeIndex];
-            }
-        }
+            ->where("locale", Lang::getLocale())
+            ->select("menu_category_id", "name")
+            ->paginate(10, ['*'], null, $page);
 
         $data = [
-            'menuCategories' => $menuCategories,
-            'languages' => $languages,
-            'filterQuery' => $filterQuery,
-            'orderBy' => $orderBy,
-            'orderType' => $orderType,
+            'menuCategories' => $menuCategories
         ];
 
         return view('admin.menu_categories.scroll', $data);

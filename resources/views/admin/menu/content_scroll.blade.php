@@ -71,7 +71,7 @@
                                     </a>
 
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="{{route('adminMenuDishEdit', ['id'=>$menuDish->id])}}"><i class="icon-pencil"></i> Сохранить</a></li>
+                                        <li><a href="{{route('adminMenuDishEdit', ['id'=>$menuDish->id])}}"><i class="icon-pencil"></i> Редактировать</a></li>
                                         <li><a href="" data-toggle="modal" data-target="#deleteModal" data-href="{{route('adminMenuDishDelete', ['id'=>$menuDish->id])}}"><i class="icon-bin"></i> Удалить</a></li>
                                     </ul>
                                 </li>

@@ -6,40 +6,13 @@
             <a href="{{route('adminMenuCategoryAdd')}}" class="btn btn-success">Добавить</a>
         </div>
     </div>
-    <div class="panel-body text-center">
-        <form method="get" action="" class="form-horizontal">
-            <div class="form-group col-lg-6">
-                <label class="control-label col-lg-6">Название</label>
-                <div class="col-lg-6">
-                    <input type="text" name="name" value="{{Request::input("name")}}" class="form-control">
-                </div>
-            </div>
-            <div class="form-group col-lg-6">
-                <div class="col-lg-6">
-                    <button type="submit" class="form-control">Отфильтровать</button>
-                </div>
-            </div>
-        </form>
-    </div>
     @if(count($menuCategories)>0)
         <table class="table datatable-basic">
             <thead>
             <tr>
-                <th>
-                    <a href="{{route("adminMenuCategoriesScroll").(!empty($filterQuery) || $orderBy!="id"||$orderType!="desc" ? "?" : "").$filterQuery.($orderBy=="id"&&$orderType=="desc" ? "" : (!empty($filterQuery) ? "&" : "")."order_by=id&order_type=".($orderType=="asc" && $orderBy=="id" ? "desc" : "asc"))}}">
-                        #
-                    </a>
-                </th>
-                @foreach($languages as $language)
-                    <th>
-                        <a href="{{route("adminMenuCategoriesScroll").(!empty($filterQuery) || $orderBy!="name"||$orderType!="desc" ? "?" : "").$filterQuery.($orderBy=="name"&&$orderType=="desc" ? "" : (!empty($filterQuery) ? "&" : "")."order_by=name&order_type=".($orderType=="asc" && $orderBy=="name" ? "desc" : "asc"))}}">
-                            Название ({{$language->locale}})
-                        </a>
-                    </th>
-                @endforeach
-                <th>
-                    Операции
-                </th>
+                <th>#</th>
+                <th>Название</th>
+                <th>Операции</th>
             </tr>
             </thead>
 
@@ -47,10 +20,8 @@
                 @foreach($menuCategories as $menuCategory)
                     <tr>
                         <td>{{$menuCategory->menu_category_id}}</td>
+                        <td>{{$menuCategory->name}}</td>
 
-                        @foreach($languages as $language)
-                            <td>{{(isset($menuCategory->namesWithLangs[$language->locale]) ? $menuCategory->namesWithLangs[$language->locale] : "Default: ".Lang::getLocale())}}</td>
-                        @endforeach
                         <td class="text-center">
                             <ul class="icons-list">
                                 <li class="dropdown">
@@ -59,7 +30,7 @@
                                     </a>
 
                                     <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a href="{{route('adminMenuCategoryEdit', ['id'=>$menuCategory->menu_category_id])}}"><i class="icon-pencil"></i> Сохранить</a></li>
+                                        <li><a href="{{route('adminMenuCategoryEdit', ['id'=>$menuCategory->menu_category_id])}}"><i class="icon-pencil"></i> Редактировать</a></li>
                                         <li><a href="" data-toggle="modal" data-target="#deleteModal" data-href="{{route('adminMenuCategoryDelete', ['id'=>$menuCategory->menu_category_id])}}"><i class="icon-bin"></i> Удалить</a></li>
                                     </ul>
                                 </li>
