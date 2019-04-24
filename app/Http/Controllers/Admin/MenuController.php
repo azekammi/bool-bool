@@ -162,8 +162,8 @@ class MenuController extends AdminController{
             $input = Request::except('_token');
             if(isset($input)) {
 
-                $rules['name.*'] = "required|max:200";
-                $rules['description.*'] = "required|max:200";
+                $rules['name.*'] = "required|max:500";
+                $rules['description.*'] = "required|max:500";
                 $rules['price'] = "required|numeric";
 
                 $validator = Validator::make($input, $rules);
@@ -229,8 +229,8 @@ class MenuController extends AdminController{
                 $input = Request::except('_token');
                 if (isset($input)) {
 
-                    $rules['name.*'] = "required|max:200";
-                    $rules['description.*'] = "required|max:200";
+                    $rules['name.*'] = "required|max:500";
+                    $rules['description.*'] = "required|max:500";
                     $rules['price'] = "required|numeric";
 
                     $validator = Validator::make($input, $rules);

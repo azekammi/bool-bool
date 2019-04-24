@@ -33,7 +33,7 @@ class MenuCategoryController extends AdminController{
             $input = Request::except('_token');
             if(isset($input)) {
 
-                $rules['name.*'] = "required|max:20";
+                $rules['name.*'] = "required|max:500";
 
                 $validator = Validator::make($input, $rules);
 
@@ -87,7 +87,7 @@ class MenuCategoryController extends AdminController{
                 $input = Request::except('_token');
                 if (isset($input)) {
 
-                    $rules['name.*'] = "required|max:20";
+                    $rules['name.*'] = "required|max:500";
 
                     $validator = Validator::make($input, $rules);
 
