@@ -39,60 +39,62 @@ $("#open-menu").on("click", navMenuActive)
 $("#close-menu").on("click", navMenuDisactive)
 $(".menu-elements").on("click", navMenuElements)
 
-var newsEventsCarousel = $('#news-events-carousel')
+function newsEventsCarouselCreate() {
+    var newsEventsCarousel = $('#news-events-carousel')
 
-$("#news-events-carousel-block .menu-prev-block").click(function(){
-    newsEventsCarousel.trigger('prev.owl.carousel');
-})
+    $("#news-events-carousel-block .menu-prev-block").click(function(){
+        newsEventsCarousel.trigger('prev.owl.carousel');
+    })
 
-$("#news-events-carousel-block .menu-next-block").click(function(){
-    newsEventsCarousel.trigger('next.owl.carousel');
-})
+    $("#news-events-carousel-block .menu-next-block").click(function(){
+        newsEventsCarousel.trigger('next.owl.carousel');
+    })
 
-function changeNewsEvents(e) {
-    var activeCount = $(this).find(".active").length
+    function changeNewsEvents(e) {
+        var activeCount = $(this).find(".active").length
 
-    if(e.item.index === e.item.count - activeCount) $("#news-events-carousel-block .menu-next-block").addClass("menu-button-disabled-next")
-    else $("#news-events-carousel-block .menu-next-block").removeClass("menu-button-disabled-next")
+        if(e.item.index === e.item.count - activeCount) $("#news-events-carousel-block .menu-next-block").addClass("menu-button-disabled-next")
+        else $("#news-events-carousel-block .menu-next-block").removeClass("menu-button-disabled-next")
 
-    if(e.item.index === 0) $("#news-events-carousel-block .menu-prev-block").addClass("menu-button-disabled-prev")
-    else $("#news-events-carousel-block .menu-prev-block").removeClass("menu-button-disabled-prev")
-}
-
-newsEventsCarousel.on('translated.owl.carousel', changeNewsEvents)
-
-newsEventsCarousel.on('initialized.owl.carousel', changeNewsEvents);
-
-newsEventsCarousel.owlCarousel({
-    loop: true,
-    center: false,
-    responsiveClass:true,
-    responsive:{
-        0:{
-            loop: false,
-            items:1,
-            margin: 15,
-            stagePadding: 15,
-            touchDrag  : false,
-            mouseDrag  : false
-        },
-        500:{
-            loop: false,
-            items:2,
-            margin: 15,
-            stagePadding: 15,
-            touchDrag  : true,
-            mouseDrag  : true
-        },
-        1000:{
-            loop: false,
-            items:3,
-            margin: 28,
-            touchDrag  : true,
-            mouseDrag  : true
-        }
+        if(e.item.index === 0) $("#news-events-carousel-block .menu-prev-block").addClass("menu-button-disabled-prev")
+        else $("#news-events-carousel-block .menu-prev-block").removeClass("menu-button-disabled-prev")
     }
-})
+
+    newsEventsCarousel.on('translated.owl.carousel', changeNewsEvents)
+
+    newsEventsCarousel.on('initialized.owl.carousel', changeNewsEvents);
+
+    newsEventsCarousel.owlCarousel({
+        loop: true,
+        center: false,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                loop: false,
+                items:1,
+                margin: 15,
+                stagePadding: 15,
+                touchDrag  : false,
+                mouseDrag  : false
+            },
+            500:{
+                loop: false,
+                items:2,
+                margin: 15,
+                stagePadding: 15,
+                touchDrag  : true,
+                mouseDrag  : true
+            },
+            1000:{
+                loop: false,
+                items:3,
+                margin: 28,
+                touchDrag  : true,
+                mouseDrag  : true
+            }
+        }
+    })
+}
 
 
 //story
@@ -159,271 +161,6 @@ $("#story-next").click(function(){
     storyCarousel.trigger('next.owl.carousel');
 })
 
-//storyCarousel.trigger('translate.owl.carousel');
-
-//menu carousel
-// var menuCarouselFood = $('#menu-carousel-food')
-//
-// function changeMenuPaginationFood(e) {
-//     var countPerItem = 4
-//     var count = e.item.count
-//     var index = e.item.index
-//     var activeCount = $(this).find(".active").length
-//
-//     var from = index*countPerItem + 1
-//     var to = from + activeCount*countPerItem - 1
-//     from = from > 0 && from < 10 ? '0'+from : from;
-//     to = to > 0 && to < 10 ? '0'+to : to;
-//     $("#menu-pagination-from-food").text(from + " ")
-//     $("#menu-pagination-to-food").text(" " + to)
-//     $("#menu-pagination-total-food").text(count * countPerItem)
-//
-//     if(e.item.index === e.item.count - activeCount) $("#menu-next-food").addClass("menu-button-disabled-next")
-//     else $("#menu-next-food").removeClass("menu-button-disabled-next")
-//
-//     if(e.item.index === 0) $("#menu-prev-food").addClass("menu-button-disabled-prev")
-//     else $("#menu-prev-food").removeClass("menu-button-disabled-prev")
-// }
-//
-// menuCarouselFood.on('translated.owl.carousel', changeMenuPaginationFood)
-//
-// menuCarouselFood.on('initialized.owl.carousel', changeMenuPaginationFood);
-//
-// menuCarouselFood.owlCarousel({
-//     loop: false,
-//     //center: true,
-//     stagePadding: 150,
-//     responsiveClass:true,
-//     responsive:{
-//         0:{
-//             items:1,
-//             margin: 25,
-//             stagePadding: 50,
-//             nav:false
-//         },
-//         600:{
-//             items:1,
-//             margin: 50,
-//             stagePadding: 100,
-//             nav:false
-//         },
-//         1000:{
-//             items:2,
-//             margin: 100,
-//             stagePadding: 150,
-//             loop: false
-//         }
-//     }
-// })
-//
-// $("#menu-next-food").click(function(){
-//     menuCarouselFood.trigger('next.owl.carousel');
-// })
-//
-// $("#menu-prev-food").click(function(){
-//     menuCarouselFood.trigger('prev.owl.carousel');
-// })
-//
-// //
-// var menuCarouselWithoutAlcohol = $('#menu-carousel-without_alcohol')
-//
-// function changeMenuPaginationWithoutAlcohol(e) {
-//     var countPerItem = 4
-//     var count = e.item.count
-//     var index = e.item.index
-//     var activeCount = $(this).find(".active").length
-//
-//     var from = index*countPerItem + 1
-//     var to = from + activeCount*countPerItem - 1
-//     from = from > 0 && from < 10 ? '0'+from : from;
-//     console.log(to)
-//     to = to > 0 && to < 10 ? '0'+to : to;
-//     $("#menu-pagination-from-without_alcohol").text(from + " ")
-//     $("#menu-pagination-to-without_alcohol").text(" " + to)
-//     $("#menu-pagination-total-without_alcohol").text(count * countPerItem)
-//
-//     if(e.item.index === e.item.count - activeCount) $("#menu-next-without_alcohol").addClass("menu-button-disabled-next")
-//     else $("#menu-next-without_alcohol").removeClass("menu-button-disabled-next")
-//
-//     if(e.item.index === 0) $("#menu-prev-without_alcohol").addClass("menu-button-disabled-prev")
-//     else $("#menu-prev-without_alcohol").removeClass("menu-button-disabled-prev")
-// }
-//
-// menuCarouselWithoutAlcohol.on('translated.owl.carousel', changeMenuPaginationWithoutAlcohol)
-//
-// menuCarouselWithoutAlcohol.on('initialized.owl.carousel', changeMenuPaginationWithoutAlcohol);
-//
-// menuCarouselWithoutAlcohol.owlCarousel({
-//     loop: false,
-//     //center: true,
-//     stagePadding: 150,
-//     responsiveClass:true,
-//     responsive:{
-//         0:{
-//             items:1,
-//             margin: 25,
-//             stagePadding: 50,
-//             nav:false
-//         },
-//         600:{
-//             items:1,
-//             margin: 50,
-//             stagePadding: 100,
-//             nav:false
-//         },
-//         1000:{
-//             items:2,
-//             margin: 100,
-//             stagePadding: 150,
-//             loop: false
-//         }
-//     }
-// })
-//
-// $("#menu-next-without_alcohol").click(function(){
-//     menuCarouselWithoutAlcohol.trigger('next.owl.carousel');
-// })
-//
-// $("#menu-prev-without_alcohol").click(function(){
-//     menuCarouselWithoutAlcohol.trigger('prev.owl.carousel');
-// })
-//
-// //
-// var menuCarouselWithAlcohol = $('#menu-carousel-with_alcohol')
-//
-// function changeMenuPaginationWithAlcohol(e) {
-//     var countPerItem = 4
-//     var count = e.item.count
-//     var index = e.item.index
-//     var activeCount = $(this).find(".active").length
-//
-//     var from = index*countPerItem + 1
-//     var to = from + activeCount*countPerItem - 1
-//     from = from > 0 && from < 10 ? '0'+from : from;
-//     console.log(to)
-//     to = to > 0 && to < 10 ? '0'+to : to;
-//     $("#menu-pagination-from-with_alcohol").text(from + " ")
-//     $("#menu-pagination-to-with_alcohol").text(" " + to)
-//     $("#menu-pagination-total-with_alcohol").text(count * countPerItem)
-//
-//     if(e.item.index === e.item.count - activeCount) $("#menu-next-with_alcohol").addClass("menu-button-disabled-next")
-//     else $("#menu-next-with_alcohol").removeClass("menu-button-disabled-next")
-//
-//     if(e.item.index === 0) $("#menu-prev-with_alcohol").addClass("menu-button-disabled-prev")
-//     else $("#menu-prev-with_alcohol").removeClass("menu-button-disabled-prev")
-// }
-//
-// menuCarouselWithAlcohol.on('translated.owl.carousel', changeMenuPaginationWithAlcohol)
-//
-// menuCarouselWithAlcohol.on('initialized.owl.carousel', changeMenuPaginationWithAlcohol);
-//
-// menuCarouselWithAlcohol.owlCarousel({
-//     loop: false,
-//     //center: true,
-//     stagePadding: 150,
-//     responsiveClass:true,
-//     responsive:{
-//         0:{
-//             items:1,
-//             margin: 25,
-//             stagePadding: 50,
-//             nav:false
-//         },
-//         600:{
-//             items:1,
-//             margin: 50,
-//             stagePadding: 100,
-//             nav:false
-//         },
-//         1000:{
-//             items:2,
-//             margin: 100,
-//             stagePadding: 150,
-//             loop: false
-//         }
-//     }
-// })
-//
-// $("#menu-next-with_alcohol").click(function(){
-//     menuCarouselWithAlcohol.trigger('next.owl.carousel');
-// })
-//
-// $("#menu-prev-with_alcohol").click(function(){
-//     menuCarouselWithAlcohol.trigger('prev.owl.carousel');
-// })
-//
-// //
-// var menuCarouselShisha = $('#menu-carousel-shisha')
-//
-// function changeMenuPaginationShisha(e) {
-//     var countPerItem = 4
-//     var count = e.item.count
-//     var index = e.item.index
-//     var activeCount = $(this).find(".active").length
-//
-//     var from = index*countPerItem + 1
-//     var to = from + activeCount*countPerItem - 1
-//     from = from > 0 && from < 10 ? '0'+from : from;
-//     console.log(to)
-//     to = to > 0 && to < 10 ? '0'+to : to;
-//     $("#menu-pagination-from-shisha").text(from + " ")
-//     $("#menu-pagination-to-shisha").text(" " + to)
-//     $("#menu-pagination-total-shisha").text(count * countPerItem)
-//
-//     if(e.item.index === e.item.count - activeCount) $("#menu-next-shisha").addClass("menu-button-disabled-next")
-//     else $("#menu-next-shisha").removeClass("menu-button-disabled-next")
-//
-//     if(e.item.index === 0) $("#menu-prev-shisha").addClass("menu-button-disabled-prev")
-//     else $("#menu-prev-shisha").removeClass("menu-button-disabled-prev")
-// }
-//
-// menuCarouselShisha.on('translated.owl.carousel', changeMenuPaginationShisha)
-//
-// menuCarouselShisha.on('initialized.owl.carousel', changeMenuPaginationShisha);
-//
-// menuCarouselShisha.owlCarousel({
-//     loop: false,
-//     //center: true,
-//     stagePadding: 150,
-//     responsiveClass:true,
-//     responsive:{
-//         0:{
-//             items:1,
-//             margin: 25,
-//             stagePadding: 50,
-//             nav:false
-//         },
-//         600:{
-//             items:1,
-//             margin: 50,
-//             stagePadding: 100,
-//             nav:false
-//         },
-//         1000:{
-//             items:2,
-//             margin: 100,
-//             stagePadding: 150,
-//             loop: false
-//         }
-//     }
-// })
-//
-// $("#menu-next-shisha").click(function(){
-//     menuCarouselShisha.trigger('next.owl.carousel');
-// })
-//
-// $("#menu-prev-shisha").click(function(){
-//     menuCarouselShisha.trigger('prev.owl.carousel');
-// })
-
-//
-//$("#food-tab").tab('show')
-//
-/*
- *
- *
- */
-
 $("#menu-block, #pin-block a:first-child, #nav-mobile-menu, #header-contacts, #header-footer, #to-section-map, #contacts-pin").on("click", "a", function (event) {
     //отменяем стандартную обработку нажатия по ссылке
     event.preventDefault();
@@ -486,6 +223,8 @@ function indicatorOfOutline(){
 
 function instaImagesHeight(){
 
+    $("#news-events-carousel .item img").show()
+
     var width = $("#news-events-carousel .owl-item").width()
     var heights = []
     $("#news-events-carousel .item").each(function(index, item){
@@ -493,8 +232,12 @@ function instaImagesHeight(){
     })
     var minHeight = Math.min.apply(Math, heights)
 
-    if(width > minHeight) $("#news-events-carousel .item").height(width)
-    else $("#news-events-carousel .item").width(minHeight)
+    if(width > minHeight) {
+        $("#news-events-carousel .item").height(width)
+    }
+    else {
+        $("#news-events-carousel .item").width(minHeight)
+    }
 
     $("#news-events-carousel .item img").hide()
 }
@@ -511,8 +254,20 @@ function foodMenuHeight(){
 }
 
 $( window ).resize(function(){
+    console.log("resize")
     headerBodyElementsView()
-    instaImagesHeight()
+
+    // $('#news-events-carousel').trigger('destroy.owl.carousel')
+    // newsEventsCarouselCreate()
+
+    var width = $("#news-events-carousel .owl-item").width()
+    $("#news-events-carousel .item").width(width)
+    $("#news-events-carousel .item").height(width)
+
+
+    // $('#news-events-carousel').trigger('refresh.owl.carousel')
+    // instaImagesHeight()
+
 })
 
 $(window).scroll(function(){
@@ -526,9 +281,7 @@ $(window).scroll(function(){
 
 $(window).on("load", function(){
 
-    // var vh = window.innerHeight * 0.01;
-//Then we set the value in the --vh custom property to the root of the document
-//     document.documentElement.style.setProperty('--vh', vh+'px');
+    newsEventsCarouselCreate()
 
     headerBodyElementsView()
     fixedMenu()

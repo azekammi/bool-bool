@@ -12,7 +12,7 @@
 
     <link href="{{asset('assets/site/font-awesome/css/all.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets/site/css/bootstrap.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/site/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/site/css/style.css?v=1.3')}}">
     <link rel="stylesheet" href="{{asset('assets/site/fonts/SanFrancisco/san_francisco.css')}}">
     <link rel="stylesheet" href="{{asset('assets/site/fonts/artful_beauty/artful_beauty.css')}}">
     <link rel="stylesheet" href="{{asset('assets/site/owlcarousel/css/owl.carousel.css')}}">

@@ -874,6 +874,7 @@ body
     background-clip: content-box
     background-position: center
     overflow: hidden
+    border-radius: 20px
     img
       border-radius: 10px
   #view-instagram
@@ -1026,8 +1027,13 @@ body
 @media screen and (min-width: 768px)
   .grid
     .grid-item
+      width: 32%
+      margin-right: 0
+      margin-bottom: 20px
       img
-        max-width: 400px
+        display: block
+        margin: 0 auto
+        max-width: 250px
 
 @media screen and (max-width: 768px)
   .grid
@@ -1041,6 +1047,19 @@ body
         width: 158px
         display: block
         margin: 0 auto
+#main
+  #section-book
+    #block-book
+      .francisco-beauty
+        *:first-child
+          font-size: 38px!important
+  #section-news-events
+    #block-new-events
+      .francisco-beauty
+        *:first-child
+          font-size: 52px!important
+        *:last-child
+          font-size: 34px!important
 
 @media screen and (max-width: 375px)
   .grid

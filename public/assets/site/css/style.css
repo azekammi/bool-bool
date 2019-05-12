@@ -975,6 +975,7 @@ body {
   background-clip: content-box;
   background-position: center;
   overflow: hidden;
+  border-radius: 20px;
 }
 #news-events-carousel .item img {
   border-radius: 10px;
@@ -1127,8 +1128,15 @@ body {
   }
 }
 @media screen and (min-width: 768px) {
+  .grid .grid-item {
+    width: 32%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
   .grid .grid-item img {
-    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    max-width: 250px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1147,6 +1155,16 @@ body {
     margin: 0 auto;
   }
 }
+#main #section-book #block-book .francisco-beauty *:first-child {
+  font-size: 38px !important;
+}
+#main #section-news-events #block-new-events .francisco-beauty *:first-child {
+  font-size: 52px !important;
+}
+#main #section-news-events #block-new-events .francisco-beauty *:last-child {
+  font-size: 34px !important;
+}
+
 @media screen and (max-width: 375px) {
   .grid .grid-item {
     margin-bottom: 10px;
