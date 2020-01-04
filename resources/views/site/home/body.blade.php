@@ -1,3 +1,7 @@
+<div id="loader" class="loader">
+    <img src="/assets/site/images/loader.svg" id="loader-svg" />
+</div>
+
 <div id="nav-mobile">
     <div id="nav-mobile-block">
         <div id="close-block">
@@ -21,6 +25,7 @@
         </ul>
     </div>
 </div>
+
 
 <div id="main">
     <div id="header">
@@ -328,7 +333,7 @@
                 <img src="/assets/site/images/Vector.png" />
             </div>
             <div id="block-copyright" class="float-left">{{Lang::get("site.footer.copyright")}}</div>
-            <div id="block-made-by" class="float-right">{{Lang::get("site.footer.made_by")}}</div>
+            <div id="block-made-by" class="float-right">Created by <a href="http://applin.io" style="color: #f1123c;" target="_blank">Applin Studio</a></div>
         </div>
     </div>
 

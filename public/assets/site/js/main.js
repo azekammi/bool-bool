@@ -1,3 +1,15 @@
+function showLoader(){
+    $("html").css("overflow-y", "hidden")
+}
+showLoader()
+function hideLoader(){
+    $("html").css("overflow-y", "auto")
+    TweenLite.to(document.getElementById("loader"), 1, {opacity: 0, ease:Power2.easeInOut, onComplete: function(){
+        $(".loader").hide();
+    }});
+    
+}
+
 function touchMoveOff(e){
     e.preventDefault()
 }
@@ -279,7 +291,11 @@ $(window).scroll(function(){
 // $(document).ready(function () {
 // })
 
+
+
 $(window).on("load", function(){
+
+    hideLoader()
 
     newsEventsCarouselCreate()
 
@@ -297,5 +313,7 @@ $(window).on("load", function(){
         percentPosition: true
         //gutter: 30
     })
+
+    $(window).trigger("resize")
 
 })

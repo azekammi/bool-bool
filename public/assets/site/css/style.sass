@@ -5,6 +5,71 @@ $phoneBlock: 203px
 $copyright: 252px
 $madeBy: 106px
 
+@-ms-keyframes spin
+  from 
+    -ms-transform: rotate(0deg)
+  to 
+    -ms-transform: rotate(360deg)
+
+@-moz-keyframes spin
+  from 
+    -moz-transform: rotate(0deg)
+  to 
+    -moz-transform: rotate(360deg)
+
+@-webkit-keyframes spin
+  from 
+    -webkit-transform: rotate(0deg)
+  to
+    -webkit-transform: rotate(360deg)
+
+// @mixin animation($str) {
+//   -webkit-animation: #{$str};
+//   -moz-animation: #{$str};
+//   -ms-animation: #{$str};
+//   -o-animation: #{$str};
+//   animation: #{$str};      
+// }
+
+@keyframes spin 
+  from 
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
+    
+
+
+.loader
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 999
+  background-color: #000
+  display: flex
+  justify-content: center
+  align-items: center
+  #loader-svg
+    -webkit-animation-name: spin
+    -webkit-animation-duration: 1000ms
+    -webkit-animation-iteration-count: infinite
+    -webkit-animation-timing-function: linear
+    -moz-animation-name: spin
+    -moz-animation-duration: 1000ms
+    -moz-animation-iteration-count: infinite
+    -moz-animation-timing-function: linear
+    -ms-animation-name: spin
+    -ms-animation-duration: 1000ms
+    -ms-animation-iteration-count: infinite
+    -ms-animation-timing-function: linear
+
+    animation-name: spin
+    animation-duration: 1000ms
+    animation-iteration-count: infinite
+    animation-timing-function: linear
+
+
 body
   font-family: "SanFrancisco" !important
 
@@ -575,6 +640,7 @@ body
     #block-moments
       width: 1145px
       margin: 0 auto
+      position: relative
       .francisco-beauty
         color: #FFF
         margin-bottom: 30px
@@ -670,7 +736,6 @@ body
         width: $copyright
         line-height: 40px
       #block-made-by
-        width: $madeBy
         line-height: 40px
       #block-booldog
         position: absolute
